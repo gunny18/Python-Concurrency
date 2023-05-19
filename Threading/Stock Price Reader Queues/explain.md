@@ -1,0 +1,12 @@
+- Initially for each and every company symbol a thread was created 
+- But we dont need that many threads, even though three is no issues with creating that many.
+- Instead we can create a knind of schedular which will be a thread instance class
+- Queue is a major part to make schedular work
+- The schedular will be called as soon as a value in put in the queue.
+- So say we have 5 schedular thread instances
+- As and when companies are put in the queue, each of them will execute and get the rpices from the regular class
+- This way we are using the same 5 schedulers again and again.
+- When we reach end, all symbols are done and thenall 5 schedulars stop execution.
+- So Queue is a special multiprocessing structure that helps execute the schedular instance when a value is inserted only.
+- So say we have 30 schedular instances, this will use 30 threads, as opposed to creating say 300 threads for each of the 300 company symbols.
+- Even though GIL will will help us out even if create 1000 threads, using schedulars and queues are a better approach.
