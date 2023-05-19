@@ -4,6 +4,7 @@ import threading
 from bs4 import BeautifulSoup
 
 class YahooPriceReaderScheduler(threading.Thread):
+    COMAPNY_PRICE_DICT = {}
     def __init__(self,inputQ,**kwargs):
         self._inputQ = inputQ
         super(YahooPriceReaderScheduler,self).__init__(**kwargs)
@@ -17,7 +18,7 @@ class YahooPriceReaderScheduler(threading.Thread):
                 break
             y = YahooPriceReader(symbol)
             p = y.get_price()
-            print(p)
+            YahooPriceReaderScheduler.COMAPNY_PRICE_DICT[symbol] = p
 
 
 
