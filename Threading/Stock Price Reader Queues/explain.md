@@ -10,3 +10,5 @@
 - So Queue is a special multiprocessing structure that helps execute the schedular instance when a value is inserted only.
 - So say we have 30 schedular instances, this will use 30 threads, as opposed to creating say 300 threads for each of the 300 company symbols.
 - Even though GIL will will help us out even if create 1000 threads, using schedulars and queues are a better approach.
+- Yes this may take a little longer but it is recommended to doit this way
+- Queues are automaticllay thread safe internally, so we dont have to also worry about handling race conditions.
